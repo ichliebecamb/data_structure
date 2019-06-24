@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "seqlist.h"
+//#include "seqlist.h"
+#include "list.h"
 int main()
 {
+	/*
 	struct _SeqList data;
 	init_seq(&data);
 	int i = 0;
@@ -31,5 +33,24 @@ int main()
 	clear_seq(&data);
 	show_seq(&data);
 	destroy_seq(&data);
+	*/
+	list data;
+	init_list(&data);
+	int i = 0;
+	for(; i < 5; i++)
+	{
+		insert_list_head(&data, i);
+	}
+	show_list(&data);
+	for( i = 0; i < 5; i++)
+	{
+		insert_list_tail(&data, i);
+	}
+	show_list(&data);
+
+	delete_list_head(&data);
+	delete_list_tail(&data);
+	show_list(&data);
+	clear_list(&data);
 	exit(0);
 }
