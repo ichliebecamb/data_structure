@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 //#include "seqlist.h"
-#include "list.h"
+//#include "list.h"
+#include "cirlist.h"
 int main()
 {
 	/*
@@ -34,6 +35,7 @@ int main()
 	show_seq(&data);
 	destroy_seq(&data);
 	*/
+	/*
 	list data;
 	init_list(&data);
 	int i = 0;
@@ -52,5 +54,21 @@ int main()
 	delete_list_tail(&data);
 	show_list(&data);
 	clear_list(&data);
+	*/
+
+	CNode head;
+	init_cir( &head );
+	int i = 0;
+	for(; i < 5; i++)
+	{
+		insert_cir_tail(&head, i);
+	}
+	show_cir( &head );
+	delete_cir_head( &head );
+	show_cir( &head );
+	delete_cir_tail( &head );
+	show_cir( &head );
+	clear_cir( &head );
+	show_cir( &head );
 	exit(0);
 }

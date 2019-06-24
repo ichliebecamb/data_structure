@@ -2,7 +2,8 @@ VPATH=.
 
 file=main.o \
 	 seqlist.o \
-	 list.o
+	 list.o \
+	 cirlist.o
 
 exe:main
 main:$(file)
