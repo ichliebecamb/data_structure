@@ -27,9 +27,13 @@ void delete_seq_pos(pSeqList seq, int pos);
 
 void clear_seq(pSeqList seq);
 
-int find_seq(pSeqList seq, ElemType);
+int find_seq(pSeqList seq, ElemType val);
+
+ElemType find_seq_pos(pSeqList seq, int pos);
 
 void show_seq(pSeqList seq);
 
 void destroy_seq(pSeqList seq);
+
+int count_seq(pSeqList seq);
 #endif

@@ -2,7 +2,8 @@
 #include <stdlib.h>
 //#include "seqlist.h"
 //#include "list.h"
-#include "cirlist.h"
+//#include "cirlist.h"
+#include "stack.h"
 int main()
 {
 	/*
@@ -56,7 +57,7 @@ int main()
 	clear_list(&data);
 	*/
 
-	CNode head;
+/*	CNode head;
 	init_cir( &head );
 	int i = 0;
 	for(; i < 5; i++)
@@ -70,5 +71,23 @@ int main()
 	show_cir( &head );
 	clear_cir( &head );
 	show_cir( &head );
+	*/
+
+	struct stack data;
+	init_stack(&data);
+	int i = 0;
+	for(; i < 20 ; i++)
+	{
+		push_stack(&data, i);
+	}
+
+	while( isempty_stack(&data) == 0)
+	{
+		printf("%d ", stack_top(&data));
+		pop_stack(&data);
+	}
+	printf("\n");
+	clear_stack(&data);
+	destroy_stack(&data);
 	exit(0);
 }

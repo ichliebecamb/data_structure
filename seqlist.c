@@ -172,5 +172,18 @@ void destroy_seq(pSeqList seq)
 	seq->length = 0;
 }
 
+int count_seq(pSeqList seq)
+{
+	assert(seq != NULL);
+	if(seq == NULL) return 0;
+	return seq->count;
+}
 
-
+ElemType find_seq_pos(pSeqList seq, int pos)
+{
+	assert(seq != NULL);
+	ElemType out;
+	if(seq == NULL ) return out;
+	if( pos >=  seq->count && pos < 0) return out;
+	return seq->data[pos];
+}
